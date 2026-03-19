@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "BricolageGrotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: 0.06 0 0;
+    --foreground: 0.98 0 0;
+    --card: 0.12 0 0;
+    --card-foreground: 0.98 0 0;
+    --popover: 0.1 0 0;
+    --popover-foreground: 0.98 0 0;
+    --primary: 0.58 0.2 258;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.15 0 0;
+    --secondary-foreground: 0.98 0 0;
+    --muted: 0.15 0 0;
+    --muted-foreground: 0.55 0 0;
+    --accent: 0.55 0.22 258;
+    --accent-foreground: 0.98 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.22 0 0;
+    --input: 0.18 0 0;
+    --ring: 0.58 0.2 258;
+    --chart-1: 0.58 0.2 258;
+    --chart-2: 0.696 0.17 162.48;
+    --chart-3: 0.769 0.188 70.08;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+    --sidebar: 0.09 0 0;
+    --sidebar-foreground: 0.98 0 0;
+    --sidebar-primary: 0.58 0.2 258;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.15 0 0;
+    --sidebar-accent-foreground: 0.98 0 0;
+    --sidebar-border: 0.22 0 0;
+    --sidebar-ring: 0.58 0.2 258;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    font-family: "PlusJakartaSans", "Inter", system-ui, sans-serif;
+  }
+}
+
+@keyframes wave-bar {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes mic-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px 4px oklch(0.58 0.2 258 / 0.4), 0 0 60px 10px
+      oklch(0.58 0.2 258 / 0.15);
+  }
+  50% {
+    box-shadow: 0 0 35px 10px oklch(0.58 0.2 258 / 0.7), 0 0 80px 20px
+      oklch(0.58 0.2 258 / 0.3);
+  }
+}
+
+@keyframes ring-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.7);
+    opacity: 0;
+  }
+}
+
+@keyframes call-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
